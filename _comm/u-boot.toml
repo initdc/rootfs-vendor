@@ -1,0 +1,4 @@
+[u-boot]
+[u-boot.upstream]
+repo = "https://github.com/u-boot/u-boot.git"
+branch = "master"

@@ -1,0 +1,12 @@
+[edk2]
+[edk2.upstream]
+repo = "https://github.com/tianocore/edk2.git"
+branch = "master"
+
+[[edk2.prebuilt]]
+url = "https://github.com/retrage/edk2-nightly"
+list = "/tree/master/bin"
+
+[[edk2.prebuilt]]
+url = "https://github.com/naitaku/edk2-platforms-build"
+query = "/actions?query=branch%3Amain+event%3Apush"

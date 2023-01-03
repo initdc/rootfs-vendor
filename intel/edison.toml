@@ -1,0 +1,27 @@
+name = "Intel Edison"
+
+[spec]
+arch = "x86_64"
+storage = "mmc"
+bootloader = "syslinux"
+
+[u-boot]
+repo = "https://github.com/andy-shev/u-boot.git"
+config = "edison_defconfig"
+file = "u-boot-edison.bin"
+
+[linux]
+repo = "https://github.com/andy-shev/linux.git"
+config = "x86_64_defconfig"
+
+[img]
+type = "single"
+
+[img.root]
+filesystem = "ext4"
+file = "edison-image-edison.ext4"
+
+[img.boot]
+filesystem = "fat32"
+file = "edison-image-edison.hddimg"
+content = ["vmlinuz", "initrd"]

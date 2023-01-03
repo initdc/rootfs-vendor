@@ -1,0 +1,31 @@
+name = "LicheeRV Dock"
+
+[spec]
+arch = "riscv64"
+storage = "sdcard"
+bootloader = "grub"
+
+[use]
+opensbi = "upstream"
+
+[opensbi]
+build.args = "PLATFORM=generic FW_PIC=y FW_OPTIONS=0x2"
+
+[u-boot]
+repo = "https://github.com/smaeul/u-boot.git"
+branch = "d1-wip"
+config = ["lichee_rv_dock_defconfig", "lichee_rv_86_panel_defconfig"]
+
+[linux]
+repo = "https://github.com/smaeul/linux.git"
+branch = "d1/all"
+config = "defconfig"
+
+[linux.drivers.rtl8723ds]
+repo = "https://github.com/lwfinger/rtl8723ds.git"
+
+[linux.drivers.XR829]
+repo = "https://github.com/YuzukiHD/Xradio-XR829.git"
+
+[img]
+type = "combined"

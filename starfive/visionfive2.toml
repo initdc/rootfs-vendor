@@ -1,0 +1,29 @@
+name = "VisionFive 2"
+
+[spec]
+arch = "riscv64"
+storage = ["sdcard", "emmc", "nvme"]
+bootloader = "grub"
+
+[opensbi]
+repo = "https://github.com/starfive-tech/opensbi.git"
+branch = "master"
+
+[u-boot]
+repo = "https://github.com/starfive-tech/u-boot.git"
+branch = "JH7110_VisionFive2_devel"
+config = "starfive_visionfive2_defconfig"
+
+[linux]
+repo = "https://github.com/starfive-tech/linux.git"
+branch = "JH7110_VisionFive2_devel"
+config = "starfive_visionfive2_defconfig"
+
+[linux.drivers.6600u]
+repo = "https://github.com/eswincomputing/eswin_6600u.git"
+
+[img]
+type = "combined"
+
+[img.par.uEnv]
+content = ["uEnv.txt"]

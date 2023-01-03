@@ -1,0 +1,4 @@
+[opensbi]
+[opensbi.upstream]
+repo = "https://github.com/riscv-software-src/opensbi.git"
+branch = "master"

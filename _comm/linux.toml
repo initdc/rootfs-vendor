@@ -1,0 +1,9 @@
+[linux]
+[linux.mainline]
+repo = "https://github.com/gregkh/linux.git"
+branch = ["master", "linux-rolling-stable", "linux-rolling-lts"]
+
+# https://cki-project.gitlab.io/kernel-ark/
+[linux.ark]
+repo = "https://gitlab.com/cki-project/kernel-ark.git"
+branch = ["os-build", "ark-latest", "ark-5.14"]

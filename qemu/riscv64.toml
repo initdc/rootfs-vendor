@@ -1,0 +1,22 @@
+name = "QEMU riscv64"
+
+[spec]
+arch = "riscv64"
+storage = "virt"
+
+[use]
+u-boot = "mainline"
+linux = "mainline"
+
+[u-boot]
+config = [
+  "qemu-riscv64_defconfig",
+  "qemu-riscv64_smode_defconfig",
+  "qemu-riscv64_spl_defconfig",
+]
+
+[linux]
+config = "defconfig"
+
+[disk]
+format = "qcow2"

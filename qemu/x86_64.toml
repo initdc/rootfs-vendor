@@ -1,0 +1,29 @@
+name = "QEMU x86_64"
+
+[spec]
+arch = "x86_64"
+storage = "virt"
+
+[use]
+u-boot = "mainline"
+linux = "mainline"
+# linux = ["mainline", "ark"]
+
+[u-boot]
+config = "qemu-x86_64_defconfig"
+
+[linux.mainline]
+config = "x86_64_defconfig"
+
+[linux.ark]
+config.tmpl = "dist-<flavor>-configs"
+config.flavor = ["rhel", "fedora"]
+config.post = "cp redhat/configs/kernel-<version>-<arch>.config .config"
+build.cmd = "make dist-srpm"
+build.post = [
+  "koji build --scratch rawhide redhat/rpm/SRPMS/kernel-*.src.rpm",
+  "koji build --scratch eln redhat/rpm/SRPMS/kernel-*.src.rpm",
+]
+
+[disk]
+format = "qcow2"

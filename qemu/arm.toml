@@ -1,0 +1,19 @@
+name = "QEMU arm"
+
+# https://developer.arm.com/documentation/den0013/d/Building-Linux-for-ARM-Systems/Building-the-Linux-kernel
+[spec]
+arch = "arm"
+storage = "virt"
+
+[use]
+u-boot = "mainline"
+linux = "mainline"
+
+[u-boot]
+config = "qemu_arm_defconfig"
+
+[linux]
+config = "defconfig"
+
+[disk]
+format = "qcow2"
