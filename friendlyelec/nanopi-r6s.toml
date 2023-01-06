@@ -1,0 +1,18 @@
+name = "NanoPi R6S"
+
+[spec]
+arch = "aarch64"
+storage = ["sdcard", "emmc"]
+
+[u-boot]
+repo = "https://github.com/friendlyarm/uboot-rockchip.git"
+branch = "nanopi6-v2017.09"
+config = "nanopi6_defconfig"
+
+[linux]
+repo = "https://github.com/friendlyarm/kernel-rockchip.git"
+branch = "nanopi5-v5.10.y_opt"
+config = "nanopi6_linux_defconfig"
+
+[img]
+type = "combined"
